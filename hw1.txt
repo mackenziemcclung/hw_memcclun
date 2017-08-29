@@ -1,0 +1,46 @@
+Problem 1.
+
+	Part (a): Looking up information relevant to the course online. Asking the course staff for help. Discussing high
+	level ideas with a classmate so long as you do not break 
+	the "Hearthstone Rule."
+
+
+	Part (b): Raise an issue within 1 week of receiving the
+	grade by Assigning the issue to your grader on GitHub. If 
+	the problem is not resolved, then Go see a course TA if 
+	assigning the issue to your grader did not resolve your 
+	concern.
+
+
+	Part (c): Eclipse, GNU emacs, Microsoft Visual Studio,
+	sublime
+
+
+	Part (d): Each student has 3 late days of which only one 
+	can be used per HW.
+
+	Part (e): Complete the online submission form as you would 
+	for an on-time submission - except when you get to step 4,
+	you confirm you are using a late date.
+
+Problem 2. 
+
+	Part (a): None of the GUI-based applications are supported. 
+	Only through the git command line interface in the 
+	course VM.
+
+
+	Part (b): Avoid Cloning into a folder that itself is a git
+	repo. There is not a point to cloning a sync-ed folder like 
+	DropBox.
+
+
+	Part (c):
+		1. git add hw1q2b.cpp
+		2. git log -p -3
+
+
+	Part (d):
+
+
+	
