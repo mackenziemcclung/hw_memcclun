@@ -51,5 +51,6 @@ Problem 2.
 	with SSH and copy the provided link. Then go back to the VM
 	terminal and input the following command: 
 	git clone git@github.com:TTrojan/CSCI104.git 
-	When prompted with an authencity question type yes and press enter. Lastly start working with the repository by inputting the following 
-	command: cd CSCI104
+	When prompted with an authencity question type yes and press 
+	enter. Lastly start working with the repository by inputting 
+	the following command: cd CSCI104
