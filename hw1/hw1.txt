@@ -54,3 +54,18 @@ Problem 2.
 	When prompted with an authencity question type yes and press 
 	enter. Lastly start working with the repository by inputting 
 	the following command: cd CSCI104
+
+Problem 4.
+
+	1. funcA(180) returns 15 or more specifically the sum of 2+2+3+3+5. 
+	If we break down the factors of 180, we get 2, 2, 3, 3, and 5.
+	Moreover the provided code functions recursively finds the factors 
+	of the given input. 
+
+
+	2. The call to funcA(n) always terminates as it is necessary to 
+	start the process of finding the factors (begining with 2). 
+	However, after catalyzing the operations of finding the factors, 
+	funcA(n) delegates the other steps to funcB(n,2). 
+
+	3. 
