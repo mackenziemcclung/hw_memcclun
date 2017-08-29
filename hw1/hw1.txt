@@ -1,6 +1,7 @@
 Problem 1.
 
-	Part (a): Looking up information relevant to the course online. Asking the course staff for help. Discussing high
+	Part (a): Looking up information relevant to the course 
+	online. Asking the course staff for help. Discussing high
 	level ideas with a classmate so long as you do not break 
 	the "Hearthstone Rule."
 
@@ -40,4 +41,7 @@ Problem 2.
 		2. git log -p -3
 
 
-	Part (d):
+	Part (d): git will prompt the user for a message using the 
+	default editior (in my case sublime). In order to properly 
+	commit to the new files, the user must use the following 
+	command: git commit -m "custom message here"
