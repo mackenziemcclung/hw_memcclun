@@ -32,8 +32,7 @@ Problem 2.
 
 
 	Part (b): Avoid Cloning into a folder that itself is a git
-	repo. There is not a point to cloning a sync-ed folder like 
-	DropBox.
+	repo. 
 
 
 	Part (c):
@@ -45,3 +44,12 @@ Problem 2.
 	default editior (in my case sublime). In order to properly 
 	commit to the new files, the user must use the following 
 	command: git commit -m "custom message here"
+
+
+	Part (e): Go to the repository page of GitHub.com and click
+	the green button entitled Clone/Download. Next, select clone
+	with SSH and copy the provided link. Then go back to the VM
+	terminal and input the following command: 
+	git clone git@github.com:TTrojan/CSCI104.git 
+	When prompted with an authencity question type yes and press enter. Lastly start working with the repository by inputting the following 
+	command: cd CSCI104
