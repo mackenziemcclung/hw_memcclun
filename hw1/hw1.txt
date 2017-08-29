@@ -68,4 +68,16 @@ Problem 4.
 	However, after catalyzing the operations of finding the factors, 
 	funcA(n) delegates the other steps to funcB(n,2). 
 
-	3. 
+	3. The output of funcA(n) is the sum of the factors of n. This is 
+	accomplished by first checking if the input number is equal to 2,
+	and if it checks the modularity. If there is not a remainder it 
+	adds 2 to the recursively defined solution of funcB(n/2,2). If n
+	modulo 2 has a remainder, the function adds 1 to the potential 
+	factor (PF) (in this case 2) and starts the process over again  with 
+	funcB(n, PF+1). Adding the factor PF to the solution of the 
+	recursive call ( PF + funcB(n/PF, 2)) or adding to the potential 
+	factor (n, PF+1), the cycle continues until PF is 
+	equal to the n.
+
+	
+
