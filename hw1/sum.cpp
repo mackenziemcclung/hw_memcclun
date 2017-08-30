@@ -13,7 +13,9 @@ int helper (int input, int len)
 	int x = helper(input/10, len-1);
 
 	//make your changes only below this line.  You may not use any loops.
-	return x;
+  x += input % 10; 
+
+  return x;
 }
 
 //do not change the main function.
