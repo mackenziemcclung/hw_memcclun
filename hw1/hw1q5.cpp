@@ -29,6 +29,7 @@ int main (int argc, char* argv[])
 	in_file >> value;
 	in_file >> noskipws;
 	helper(in_file, value+1);
+	in_file.close;
 }
   
   
