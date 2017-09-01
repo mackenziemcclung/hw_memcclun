@@ -66,7 +66,10 @@ Problem 4.
 	2. The call to funcA(n) always terminates as it is necessary to 
 	start the process of finding the factors (begining with 2). 
 	However, after catalyzing the operations of finding the factors, 
-	funcA(n) delegates the other steps to funcB(n,2). 
+	funcA(n) delegates the other steps to funcB(n,2). Since funcB(n,2)
+	has a base-case if statement (n<2 and i ==n) that returns the last
+	factor, it always terminates; in doing so it returns the factor sum
+	to funcA(n), which then returns the factor sum to the supposed main.
 
 	3. The output of funcA(n) is the sum of the factors of n. This is 
 	accomplished by first checking if the input number is equal to 2,

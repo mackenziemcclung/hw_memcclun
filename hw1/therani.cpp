@@ -60,10 +60,10 @@ int main(int argc, char* argv[])
 	  	++experiments;			//incrementing # of experiments
 	  	temp = new string* [experiments];  // using placeholder array
 	  	for (int i = 0; i < experients-1; ++i) {
-	  		temp[i] = new string[history[i]];
+	  		temp[i] = history[i];
 	  	} 
 	  	temp[i] = NULL;
-	  	transition(temp);	//sending temp to transition function
+	  	rewriting_history(temp);	//sending temp to copy to history
 	  }
 	  else if (curr == "MOVE") {
 	  	int x, y, n, m;
@@ -76,8 +76,16 @@ int main(int argc, char* argv[])
 	  		output << "Error - incorrect command: " << line << endl;
 	  		output << "Number out of range" << endl;
 	  	}
+	  	else if ()
 	  }
 	  else if (curr == "QUERY") {
+	  	int x, n;
+	  	ss >> x >> n;
+	  	if (ss.fail()) {
+	  		output << "Error - incorrect command: " << line << endl;
+	  	}
+	  	else if ()
+	  	}
 
 	  }
 	  else {
@@ -87,12 +95,20 @@ int main(int argc, char* argv[])
   }
   return 0;
 }
-void transition(string **t) {
-	rewriting_history(t); //copying to new stuff to history
-	deallocation_nation(t); //deallocating & freeing memory 
+//void transition(string **t) {
+//	rewriting_history(t); 
+//	deallocation_nation(t);  
+//}
+void rewriting_history(string **temp) {//copying to new stuff to history
+	delete history; //delete the array of pointers not pointers
+	history = new string[experiments];
+	for (int i = 0; i < experiments; ++i) {
+		history [i] = temp[i];
+	}
+	deallocation_nation(temp);
 }
-void deallocation_nation(string **bye) {
-	for(int i = 0; i < experiments; i++) {
+void deallocation_nation(string **bye) { //deallocating & freeing memory
+	for(int i = 0; i < experiments; ++i) {
 		delete[] bye[i];
 	}
 	delete bye; 
