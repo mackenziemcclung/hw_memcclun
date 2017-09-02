@@ -181,7 +181,6 @@ void move_it(string **history, int experiments, int x, int y, int n, int m, int 
 	int ranger = m - n +1; 
 	int u = n;
 	string *tempo = new string[numsubjects[y]+ranger];
-	string *tem = history[x];
 	for (int i = 0; i < numsubjects[y]; ++i){ //coping history into temp
 		tempo[i] = history[y][i];
 	}
