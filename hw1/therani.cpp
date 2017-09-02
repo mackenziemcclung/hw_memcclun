@@ -180,43 +180,34 @@ void deallocation_nation(string **bye, int experiments) { //deallocating & freei
 void move_it(string **history, int experiments, int x, int y, int n, int m, int *numsubjects) {
 	int ranger = m - n +1; 
 	int u = n;
-	string **tempo = new string*[numsubjects[y]+ranger];
+	string *tempo = new string[numsubjects[y]+ranger];
 	string *tem = history[x];
 	for (int i = 0; i < numsubjects[y]; ++i){ //coping history into temp
-		tempo[y][i] = history[y][i];
+		tempo[i] = history[y][i];
 	}
-	for (int j = numsubjects[y]-1; j < (numsubjects[y]+ ranger)-1; ++j) {
-		tempo[y][0] = history[x][0] + "" + (char)(x+'0'); 	// adding newbies into temp
+	for (int j = numsubjects[y]; j < (numsubjects[y]+ ranger); ++j) {
+		tempo[j] = history[x][u] + " " + static_cast<char>('0'+y); 	// adding newbies into temp
 		++u;
 	}
-	rewriting_history(tempo, history, experiments);
+	delete[] history[y];
+	history[y] = tempo;
 	removie(tem, n, m, numsubjects, x, history);
-
-	int *sub_subs = new int[experiments]; 
-	for(int i = 0; i < experiments; i++) { //rewrites the numsubs for y
-	 	if (i != (y) && i != x) {
-  			sub_subs[i] = numsubjects[i];
-	  	}
-	  	else if (i = x) {
-	  		sub_subs[i] = numsubjects[i] - ranger;
-	  	}
-  		else {
-  			sub_subs[i] = numsubjects[i] + ranger;
-  		}
-  	}
-	rewriting_nums(sub_subs, numsubjects, experiments);
+	//rewrites the numsubs for y
+	numsubjects[x] -= ranger;
+	numsubjects[y] +=ranger;
+	
 }
 void removie(string *exp, int n, int m, int *numsubjects, int x, string **history) {
 	int rip = m - n; 
+	int yahoo = 0;
 	string *tempe = new string[numsubjects[x]- rip];
 	for (int i = 0; i < numsubjects[x]; ++i) {
 		if (i ==n) {
-			while (i < m){
-				++i;
-			}
+			i += rip;
+			yahoo = rip;
 		}
 		else {
-			tempe[i] = history[x][i];
+			tempe[i-yahoo] = history[x][i];
 		}
 	} 
 	delete[] history[x];
