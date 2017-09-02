@@ -8,7 +8,7 @@ void deallocation_nation(string **bye, int experiments);
 void rewriting_history(string **temp, string**history, int experiments);
 void rewriting_nums(int *sub_subs, int *numsubjects, int experiments);
 void move_it(string **history, int experiments, int x, int y, int n, int m, int *numsubjects);
-void removie(string *exp, int n, int m, int *numsubjects, int x, string **history);
+void removie( int n, int m, int *numsubjects, int x, string **history);
 //void deallocation_num(int *bye, int experiments);
 
 int main(int argc, char* argv[])
@@ -191,14 +191,15 @@ void move_it(string **history, int experiments, int x, int y, int n, int m, int 
 	}
 	delete[] history[y];
 	history[y] = tempo;
-	removie(tem, n, m, numsubjects, x, history);
+	removie(n, m, numsubjects, x, history);
 	//rewrites the numsubs for y
 	numsubjects[x] -= ranger;
 	numsubjects[y] +=ranger;
 	
 }
-void removie(string *exp, int n, int m, int *numsubjects, int x, string **history) {
+void removie(int n, int m, int *numsubjects, int x, string **history) {
 	int rip = m - n; 
+
 	int yahoo = 0;
 	string *tempe = new string[numsubjects[x]- rip];
 	for (int i = 0; i < numsubjects[x]; ++i) {
@@ -206,9 +207,9 @@ void removie(string *exp, int n, int m, int *numsubjects, int x, string **histor
 			i += rip;
 			yahoo = rip;
 		}
-		else {
+		//else {
 			tempe[i-yahoo] = history[x][i];
-		}
+		//}
 	} 
 	delete[] history[x];
 	history[x] = tempe;
